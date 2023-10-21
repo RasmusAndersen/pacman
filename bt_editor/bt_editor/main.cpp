@@ -1,4 +1,4 @@
-
+#include <iostream>
 #include <QApplication>
 #include <node_editor/NodeStyle>
 #include <node_editor/FlowViewStyle>
@@ -23,7 +23,17 @@ main(int argc, char *argv[])
 
   QApplication app(argc, argv);
 
-  MainWindow win;
+  // Access the command-line arguments from within the event loop
+  QStringList arguments = app.arguments();
+  arguments.pop_front();
+  QString args;
+  // Process or use the arguments as needed
+  for (const QString &arg : arguments) {
+      args.append(" ");
+      args.append(arg);
+  }
+
+  MainWindow win(0, args);
   win.show();
 
   return app.exec();

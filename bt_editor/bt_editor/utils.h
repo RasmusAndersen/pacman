@@ -17,7 +17,7 @@ void NodeReorder(QtNodes::FlowScene& scene);
 
 void SubtreeReorder(QtNodes::FlowScene &scene, QtNodes::Node &root_node);
 
-void runTree(QtNodes::FlowScene *scene);
+void runTree(QtNodes::FlowScene *scene, QString game_args);
 
 void calculateForces(QtNodes::FlowScene *scene);
 

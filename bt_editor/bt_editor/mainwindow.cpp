@@ -33,7 +33,7 @@ using QtNodes::FlowScene;
 using QtNodes::NodeGraphicsObject;
 
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent, QString game_args) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     _arrange_shortcut(QKeySequence(Qt::CTRL + Qt::Key_A), this),
@@ -41,8 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
+    this->game_args = game_args;
 
     QSettings settings("Michele Colledanchise", "BehaviorTreeEditor");
     restoreGeometry(settings.value("MainWindow/geometry").toByteArray());
@@ -701,7 +700,7 @@ void MainWindow::on_playButton_released()
             node->nodeGraphicsObject().update();
         }
         createPacmanXml();
-        std::thread t(&runTree, _main_scene);
+        std::thread t(&runTree, _main_scene, this->game_args);
         t.detach();
 
     }

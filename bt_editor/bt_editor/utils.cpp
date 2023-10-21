@@ -522,14 +522,18 @@ void updateBTColors(QtNodes::FlowScene* scene, QtNodes::Node* node, std::string*
     }
 }
 
-void runTree(QtNodes::FlowScene* scene)
+void runTree(QtNodes::FlowScene* scene, QString game_args)
 {
     //qDebug() << "runTree\n";
 #ifdef _WIN32
 
     std::thread t1(system, "python pacman.py -t -p BTAgent");
 #else
-    std::thread t1(system, "python3 pacman.py -p BTAgent");
+    
+    std::string game_cmd = "python3 pacman.py -p BTAgent";
+    game_cmd.append(game_args.toStdString());
+    std::cout << "using arguments for game: " << game_cmd.c_str() << std::endl;
+    std::thread t1(system, game_cmd.c_str());
 #endif
 
     t1.detach();

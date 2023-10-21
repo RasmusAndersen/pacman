@@ -24,7 +24,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = 0, QString game_args=QString());
     ~MainWindow();
 
     void createPacmanXml();
@@ -90,6 +90,8 @@ private:
     bool    _state_received;
     QString _state_msg;
     QtNodes::Node* _root_node;
+
+    QString game_args;
 
 };
 
