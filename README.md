@@ -1,5 +1,7 @@
 Installation in Windows
 ------------
+
+**NOTE: you need a very old version of QT5 to build on Windows. It is highly recommended that you use a Unix-based system instead.**
 1) Install Dependencies:
 
 Download and install [Cmake for Windows](https://cmake.org/download/) <br/>
@@ -12,7 +14,6 @@ Download and install [python3 for Windows](http://docs.python-guide.org/en/lates
 3) Build the Software:
 
 Run Cmake, set the project (pacmanBT) root folder and the desired build folder (your choice). Configure and generate project solution for your favorite IDE (e.g. Visual Studio 13). Then open the solution from your IDE and build the project.
-
 
 Run in Windows
 ------------
@@ -41,8 +42,8 @@ Installation in Unix
 
 Run in a terminal the following commands:
 
-`cd pacmanBT` <br/>
-`mkdir build` <br/>
+`cd pacman` <br/>
+`mkdir -p build` <br/>
 `cd build` <br/>
 `cmake ..` <br/>
 `make`
@@ -52,48 +53,25 @@ Run in Unix
 
 Run in a terminal the following commands:
 
-`cd bt_editor`
-
 `./behavior_tree_editor`
 
 
-
-
-
-
-
-Verify your installation
-------------
--In the BT editor: File->Load  <br/>
--Browse in the folder pacmanBT (the one you retrieved in step 2)  <br/>
--Select the file pacmantree.xml  <br/>
--A BT should appear in the editor, as in the picture below: <br/>
-
-![alt tag](https://github.com/miccol/pacmanBT/blob/master/ScreenWindows.jpg)
-
-
-
-
-
--Press the Play <img src="https://github.com/miccol/pacmanBT/blob/master/bt_editor/qt_nodeditor/resources/play.png" width="15" height="15"> icon. <br/>
--Enjoy
-
-
-Create your Behavior Tree
-------------
-
-Right Click in the editor to add a node. 
-Press Play to run the BT
-Enjoy
+1. Right Click in the editor to add a node. 
+2. Press Play to run the BT.
 
 NOTE: A BT must have the root node. It cannot have loose nodes (non-connected nodes).
 
+Add the following parameters to `./behavior_tree_editor` to change the ghost behaviour and environment layout:
 
-
-
-
-
-
-
-
-
+- '-l', '--layout': the LAYOUT_FILE from which to load the map layout, **default=mediumClassic**
+    - smallClassic
+    - mediumClassic
+    - trickyClassic
+    - bigTrickyClassic
+- '-g', '--ghosts': the ghost agent TYPE in the ghostAgents module to use, **default=RandomGhost**
+    - RandomGhost: ghosts moves randomly in all direction
+    - ImperfectGhost: ghosts moves randomly, but will slowly converge on your position
+    - ChasingGhost: ghosts will move towards you and occasionally move in a random direction
+    - PerfectGhost: ghosts will constantly move towards you
+- '-k', '--numghosts': The maximum number of ghosts to use, **default=4**
+- '-f', '--fixRandomSeed': Fixes the random seed to always play the same game, **default=False**
