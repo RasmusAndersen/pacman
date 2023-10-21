@@ -36,7 +36,7 @@ Installation in Unix
 
 2) Download the repository:
 
-`git clone https://github.com/miccol/pacmanBT.git`
+`git clone git@github.com:RasmusAndersen/pacman.git`
 
 3) Build the Software:
 
