@@ -75,3 +75,16 @@ Add the following parameters to `./behavior_tree_editor` to change the ghost beh
     - PerfectGhost: ghosts will constantly move towards you
 - '-k', '--numghosts': The maximum number of ghosts to use, **default=4**
 - '-f', '--fixRandomSeed': Fixes the random seed to always play the same game, **default=False**
+
+
+Run in a Docker container
+------------
+**NOTE: Docker containers are not intended to run programs with UIs, so you will have to figure out how start the container with UI based on your system.**
+
+Build the docker container
+
+`docker build -t pacman:latest .*`
+
+Run the container
+
+`docker run --rm pacman`
