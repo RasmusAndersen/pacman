@@ -39,6 +39,14 @@ GHOST_COLORS.append(formatColor(.98,.41,.07)) # Orange
 GHOST_COLORS.append(formatColor(.1,.75,.7)) # Green
 GHOST_COLORS.append(formatColor(1.0,0.6,0.0)) # Yellow
 GHOST_COLORS.append(formatColor(.4,0.13,0.91)) # Purple
+GHOST_COLORS.append(formatColor(0, .7, .7))  # Cyan
+GHOST_COLORS.append(formatColor(0.75, 0.5, 0.0))  # Brown
+GHOST_COLORS.append(formatColor(0.0, 0.5, 0.5))  # Teal
+GHOST_COLORS.append(formatColor(0.6, 0.0, 0.6))  # Magenta
+GHOST_COLORS.append(formatColor(0.0, 0.6, 0.0))  # Lime Green
+GHOST_COLORS.append(formatColor(0.2, 0.4, 0.8))  # Slate Blue
+GHOST_COLORS.append(formatColor(0.4, 0.8, 0.2))  # Chartreuse
+GHOST_COLORS.append(formatColor(0.8, 0.2, 0.4))  # Salmon
 
 TEAM_COLORS = GHOST_COLORS[:2]
 
