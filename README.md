@@ -83,7 +83,7 @@ Run in a Docker container
 
 Build the docker container
 
-`docker build -t pacman:latest .*`
+`docker build -t pacman:latest .`
 
 Run the container
 
